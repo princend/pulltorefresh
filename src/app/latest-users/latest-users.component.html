@@ -1,0 +1,9 @@
+<h3>Latest Users</h3>
+<div>
+  <article *ngFor="let user of (users$ | async)">
+    <h4>{{ user.first }} {{ user.last }}</h4>
+    <p>Joined: {{ user.created | date: 'yyyy/MM/dd' }}</p>
+    <p>Balance: {{ user.balance | currency: 'USD': true }}</p>
+    <p>Contact: {{ user.address }}, {{ user.email }}</p>
+  </article>
+</div>
